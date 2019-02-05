@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Row } from "react-grid-system";
+import color from "./../colors";
 
 const Card = styled.div`
-  margin: 1.5em;
+  margin: 1em;
   width: 100%;
 `;
 
@@ -13,11 +14,13 @@ const CardContent = styled.div`
 `;
 
 const CardTitle = styled.h4`
-  color: grey;
+  color: ${color.black};
+  font-size: 24px;
+  height: 2.2em;
 `;
 
 const MovieDescription = styled.p`
-  color: blue;
+  color: ${color.white};
 `;
 
 class MovieCard extends React.Component {
