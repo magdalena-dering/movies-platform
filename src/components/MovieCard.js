@@ -5,11 +5,7 @@ import color from "./../colors";
 
 const Card = styled.div`
   margin: 2em 0;
-  width: 100%;
-  @media(max-width: 575px){
-  margin:0 auto;
-  width: 220px;
-  }
+  width: 100%; 
 `;
 
 const CardContent = styled.div`

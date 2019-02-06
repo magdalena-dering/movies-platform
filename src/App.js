@@ -21,7 +21,7 @@ const AppBar = styled.div`
   padding-top: 0.2em;  
   margin: 2em 0;
   border-radius: 3px;
-  @media (max-width: 375) {
+  @media (max-width: 575) {
    font-size: 25px    
   }  
 `;
@@ -31,17 +31,20 @@ const ApiIcon = styled.img`
   position: absolute;
   right: 2em;
   top: 0.8em;
-  @media (max-width: 375px) {
+  @media (max-width: 575px) {
      width: 6em;   
      top: 1em;    
   }
 `;
 
-const Subtitle = styled.p`
+const SubTitle = styled.p`
    color: ${color.white};    
    text-transform: uppercase;
    font-weight: 700
    padding-left: 0.9em;
+    @media (max-width: 575) {
+     width: 14em;   
+  }
 `;
 
 const OpenButton = styled.button`
@@ -97,7 +100,7 @@ class App extends React.Component {
                             <ApiIcon src={apiIcon} alt="api-icon"/>
                         </a>
                     </AppBar>
-                    <Subtitle>Upcoming movies</Subtitle>
+                    <SubTitle>Upcoming movies</SubTitle>
                     <MovieModal
                         movie={movie}
                         onClose={() => this.setState({movie: null})}
