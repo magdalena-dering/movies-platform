@@ -17,11 +17,13 @@ const H1 = styled.h1`
 const AppBar = styled.div`
   background-color: ${color.pinkOcd};
   height: 4.5em;
-  padding-left: 1em;
-  padding-top: 0.2em;
-  padding: em;
-  margin: 2em 0 1em 0;
+  padding-left: 0.9em;
+  padding-top: 0.2em;  
+  margin: 2em 0;
   border-radius: 3px;
+  @media (max-width: 375) {
+   font-size: 25px    
+  }  
 `;
 
 const ApiIcon = styled.img`
@@ -29,22 +31,26 @@ const ApiIcon = styled.img`
   position: absolute;
   right: 2em;
   top: 0.8em;
+  @media (max-width: 375px) {
+     width: 6em;   
+     top: 1em;    
+  }
 `;
 
 const Subtitle = styled.p`
    color: ${color.white};    
    text-transform: uppercase;
    font-weight: 700
-   padding: 1em;
+   padding-left: 0.9em;
 `;
 
 const OpenButton = styled.button`
   color: ${color.white};
   font-weight: 500;
   text-transform: uppercase;
-  height: 2em;
-  width: 10em;
-  margin: 3.5em;
+  height: 2.5em;
+  width: 12em;
+  margin: 2.8em;
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0.6);
   border: 1px solid ${color.white};
@@ -83,11 +89,13 @@ class App extends React.Component {
 
         return (
             <>
-                <Global/>
                 <Container>
+                    <Global/>
                     <AppBar>
                         <H1>Movies</H1>
-                        <ApiIcon src={apiIcon} alt="api-icon"/>
+                        <a href="https://www.themoviedb.org/">
+                            <ApiIcon src={apiIcon} alt="api-icon"/>
+                        </a>
                     </AppBar>
                     <Subtitle>Upcoming movies</Subtitle>
                     <MovieModal
@@ -97,7 +105,7 @@ class App extends React.Component {
                     <Row>
                         {movies ? (
                             movies.map(movie => (
-                                <Col key={movie.id} sm={12} md={4} lg={3}>
+                                <Col key={movie.id} sm={6} md={4} lg={3}>
                                     <MovieCard movie={movie}/>
                                     <OpenButton onClick={() => this.setState({movie: movie})}>
                                         Show details
