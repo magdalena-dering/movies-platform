@@ -4,23 +4,39 @@ import { Row } from "react-grid-system";
 import color from "./../colors";
 
 const Card = styled.div`
-  margin: 1em;
+  margin: 2em;
   width: 100%;
 `;
 
 const CardContent = styled.div`
-  padding: 1em;
-  position: absolute;
+  position: relative;
 `;
 
 const CardTitle = styled.h4`
-  color: ${color.black};
-  font-size: 24px;
-  height: 2.2em;
+  color: ${color.white};
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0.2em;
 `;
 
-const MovieDescription = styled.p`
-  color: ${color.white};
+const MovieImg = styled.img`
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+`;
+
+const Rating = styled.p`
+    color: ${color.tolopea}  
+    font-weight: 600; 
+    text-align: center;     
+    width: 3em;
+    height: 3em; 
+    padding: 0.7em;         
+    border-radius: 30px;   
+    opacity: 0.8;
+    margin-left: 5.2em;    
+    margin-bottom: -1.2em;
+    background: ${color.maximumYellow}  
 `;
 
 class MovieCard extends React.Component {
@@ -30,7 +46,6 @@ class MovieCard extends React.Component {
 
   render() {
     const { movie } = this.props;
-    const description = this.state.isMouseOver ? movie.overview : null;
     return (
       <>
         <Row>
@@ -38,11 +53,12 @@ class MovieCard extends React.Component {
             onMouseOver={() => this.setState({ isMouseOver: true })}
             onMouseLeave={() => this.setState({ isMouseOver: false })}
           >
-            <CardTitle>{movie.title}</CardTitle>
             <CardContent>
-              <MovieDescription>{description}</MovieDescription>
+              <Rating>{movie.vote_average}</Rating>
+
+              <MovieImg src={movie.poster_path} width={200} alt="poster" />
             </CardContent>
-            <img src={movie.poster_path} width={280} alt="poster" />
+            <CardTitle>{movie.title}</CardTitle>
           </Card>
         </Row>
       </>

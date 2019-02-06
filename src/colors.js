@@ -1,6 +1,7 @@
 export default {
-    black: "0000000",
-    navy: "#364A62",
-    turquoise: "#3587a4",
-    white: "#ffffff"
+  black: "#000000",
+  white: "#ffffff",
+  tolopea: "#222b31",
+  pinkOcd: "#f83745",
+  maximumYellow: "#ffb10a"
 };
