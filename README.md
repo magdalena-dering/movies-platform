@@ -3,7 +3,7 @@
 Preview: http://movies-platform.surge.sh/
 
 General features:
-- getting photos of movie posters with overview, title, release date and users votes
+- getting photos of movie's posters with overview, title, release date and users votes
 
 ## Setup
 To run this project, install it locally using npm:
@@ -15,3 +15,7 @@ $ npm start
 ```
 
 Author: Magdalena Dering
+
+Credits: Icons downloaded from: 
+- www.flaticon.com
+- https://loading.io

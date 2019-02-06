@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Row } from "react-grid-system";
+import { Col } from "react-grid-system";
 import color from "./../colors";
 
 const Card = styled.div`
-  margin: 2em;
+  margin: 2em 0;
   width: 100%;
+  @media(max-width: 575px){
+  margin:0 auto;
+  width: 220px;
+  }
 `;
 
 const CardContent = styled.div`
@@ -20,7 +24,6 @@ const CardTitle = styled.h4`
 `;
 
 const MovieImg = styled.img`
-  cursor: pointer;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
@@ -39,31 +42,18 @@ const Rating = styled.p`
     background: ${color.maximumYellow}  
 `;
 
-class MovieCard extends React.Component {
-  state = {
-    isMouseOver: false
-  };
-
-  render() {
-    const { movie } = this.props;
-    return (
-      <>
-        <Row>
-          <Card
-            onMouseOver={() => this.setState({ isMouseOver: true })}
-            onMouseLeave={() => this.setState({ isMouseOver: false })}
-          >
-            <CardContent>
-              <Rating>{movie.vote_average}</Rating>
-
-              <MovieImg src={movie.poster_path} width={200} alt="poster" />
-            </CardContent>
-            <CardTitle>{movie.title}</CardTitle>
-          </Card>
-        </Row>
-      </>
-    );
-  }
-}
+const MovieCard = ({ movie }) => {
+  return (
+      <Col>
+        <Card>
+          <CardContent>
+            <Rating>{movie.vote_average}</Rating>
+            <MovieImg src={movie.poster_path} width={200} alt="poster" />
+          </CardContent>
+          <CardTitle>{movie.title}</CardTitle>
+        </Card>
+      </Col>
+      );
+};
 
 export default MovieCard;

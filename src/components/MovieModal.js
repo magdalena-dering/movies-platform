@@ -23,54 +23,79 @@ const ModalContent = styled.div`
   top: 25%;
   bottom: 25%;
   margin: auto;
-  width: 600px;
-  height: 600px;
-  background: ${color.tolopea} ;  
+  width: 600px;  
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: ${color.tolopea} ;  
   border-radius: 3px; 
-  padding: 2em  
+  padding: 2.5em  
+  &:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;  
+  background-image: url(${props=>props.src});  
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  @media(min-width: 1024px) and (max-width: 1200px){
+    width:535px;  
+  }
+   @media(min-width: 768px) and (max-width: 1023px){
+    width: 400px;  
+  }
+    @media(min-width: 575px) and (max-width: 767px){
+    width: 350px;  
+  }
+    @media(min-width: 320px) and (max-width: 575px){
+    width: 280px;  
+    left: 5%;
+    right: 5%;
+  }
+ 
+
 `;
 
 const MovieDetails = styled.span`
  color: ${color.pinkOcd}
  font-weight: 700;
- z-index:1
+ z-index: 100000
 `;
 
-const ImgPoster = styled.img`
-  position: absolute;
-  opacity: 0.2;
-  border-radius: 1px;
-  width: 600px;
-  left: 0;
-  bottom: 0;
-  border-radius: 1px;
-`;
-
-const CloseIcon = styled.img`
+const CloseIcon = styled.button`
   width: 3em;
+  height: 3em;
+  right: 1.5em;
+  top: 1.5em;
   cursor: pointer;
   position: absolute;
-  right: 1em;
-  top: 1em;
+  border: none;
+  background-image: url(${close});
+  background-color: transparent;
+  background-size: 100%;  
+  z-index: 1;
 `;
 
 const MovieModal = ({movie, onClose}) => {
-    const releaseDate = movie && movie.release_date.substring(0, 4);
 
+    const releaseDate = movie && movie.release_date.substring(0, 4);
     const language = movie && movie.original_language.toLocaleUpperCase();
 
     return (
         <>
             <Modal open={movie}>
                 {movie && (
-                    <ModalContent>
-                        <CloseIcon src={close} onClick={onClose} alt="close-icon"/>
+                    <ModalContent src={movie.backdrop_path}>
+                        <CloseIcon onClick={onClose}/>
                         <h2>{movie.title}</h2>
                         <p>{movie.overview}</p>
                         <MovieDetails>{releaseDate} </MovieDetails>
                         <MovieDetails>{language} </MovieDetails>
                         <MovieDetails>{movie.vote_average}</MovieDetails>
-                        <ImgPoster src={movie.backdrop_path} alt="poster"/>
                     </ModalContent>
                 )}
             </Modal>
