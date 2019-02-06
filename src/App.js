@@ -7,7 +7,7 @@ import MovieCard from "./components/MovieCard";
 import MovieModal from "./components/MovieModal";
 import spinner from "./assets/icons/spinner.svg";
 import apiIcon from "./assets/icons/tmdb.svg";
-import Global from "./styles/Global";
+import Global from "./components/Global";
 import color from "./colors";
 
 const H1 = styled.h1`
