@@ -51,9 +51,9 @@ const OpenButton = styled.button`
   color: ${color.white};
   font-weight: 500;
   text-transform: uppercase;
-  height: 2.5em;
+  height: 2.8em;
   width: 14.2em;
-  margin: 0.5em;
+  margin: 0.4em;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid ${color.white};
   border-radius: 3px;
@@ -64,7 +64,7 @@ const OpenButton = styled.button`
   -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
-  bottom: 120px;
+  bottom: 140px;
    &:hover{
       letter-spacing: 0.2em;
       -webkit-letter-spacing: 0.2em;
