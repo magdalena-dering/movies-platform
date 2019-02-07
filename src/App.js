@@ -53,7 +53,7 @@ const OpenButton = styled.button`
   text-transform: uppercase;
   height: 2.5em;
   width: 14.2em;
-  margin: 1.5em;
+  margin: 0.5em;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid ${color.white};
   border-radius: 3px;

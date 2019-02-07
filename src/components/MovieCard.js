@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Col } from "react-grid-system";
 import color from "./../colors";
 
 const Card = styled.div`
@@ -40,7 +39,6 @@ const CardTitle = styled.h4`
 
 const MovieCard = ({ movie }) => {
   return (
-    <Col>
       <Card>
         <CardContent>
           <Rating>{movie.vote_average}</Rating>
@@ -48,7 +46,6 @@ const MovieCard = ({ movie }) => {
         </CardContent>
         <CardTitle>{movie.title}</CardTitle>
       </Card>
-    </Col>
   );
 };
 
