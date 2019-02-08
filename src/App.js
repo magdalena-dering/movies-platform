@@ -56,28 +56,6 @@ const Spinner = styled.img`
   margin: auto;
 `;
 
-export const OpenButton = styled.button`
- opacity: 0
- color: ${color.white};
- font-weight: 500;
- text-transform: uppercase;
- height: 2.8em;
- width: 14.2em;
- margin: 0.4em;
- z-index: -1;
- background-color: transparent;
- border: 1px solid ${color.white};
- border-radius: 3px;
- letter-spacing: 0.1em;
- -webkit-letter-spacing: 0.1em;
- -moz-letter-spacing: 0.1em;
- -ms-letter-spacing: 0.1em;
- -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
- transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
- position: absolute;
- bottom: 140px;
-`;
-
 class App extends React.Component {
   state = { movie: null };
 
@@ -109,9 +87,6 @@ class App extends React.Component {
             movies.map(movie => (
               <Col key={movie.id} sm={6} md={4} lg={3}>
                 <MovieCard movie={movie} />
-                <OpenButton onClick={() => this.setState({ movie: movie })}>
-                  Show details
-                </OpenButton>
               </Col>
             ))
           ) : (
