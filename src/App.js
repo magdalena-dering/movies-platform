@@ -109,6 +109,9 @@ class App extends React.Component {
             movies.map(movie => (
               <Col key={movie.id} sm={6} md={4} lg={3}>
                 <MovieCard movie={movie} />
+                <OpenButton onClick={() => this.setState({ movie: movie })}>
+                  Show details
+                </OpenButton>
               </Col>
             ))
           ) : (
