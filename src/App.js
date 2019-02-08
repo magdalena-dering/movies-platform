@@ -47,32 +47,6 @@ const ApiIcon = styled.img`
   }
 `;
 
-const OpenButton = styled.button`
-  color: ${color.white};
-  font-weight: 500;
-  text-transform: uppercase;
-  height: 2.8em;
-  width: 14.2em;
-  margin: 0.4em;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid ${color.white};
-  border-radius: 3px;
-  letter-spacing: 0.1em;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;  
-  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  position: absolute;
-  bottom: 140px;
-   &:hover{
-      letter-spacing: 0.2em;
-      -webkit-letter-spacing: 0.2em;
-      -moz-letter-spacing: 0.2em;
-      -ms-letter-spacing: 0.2em;      
-    }
-`;
-
 const Spinner = styled.img`
   width: 5em
   top: 0;
@@ -80,6 +54,28 @@ const Spinner = styled.img`
   right: 0;
   bottom: 0;
   margin: auto;
+`;
+
+export const OpenButton = styled.button`
+ opacity: 0
+ color: ${color.white};
+ font-weight: 500;
+ text-transform: uppercase;
+ height: 2.8em;
+ width: 14.2em;
+ margin: 0.4em;
+ z-index: -1;
+ background-color: transparent;
+ border: 1px solid ${color.white};
+ border-radius: 3px;
+ letter-spacing: 0.1em;
+ -webkit-letter-spacing: 0.1em;
+ -moz-letter-spacing: 0.1em;
+ -ms-letter-spacing: 0.1em;
+ -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+ position: absolute;
+ bottom: 140px;
 `;
 
 class App extends React.Component {

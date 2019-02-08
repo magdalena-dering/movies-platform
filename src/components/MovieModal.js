@@ -6,7 +6,7 @@ import close from "../assets/icons/cancel.svg";
 const Modal = styled.div`
   display: ${props => (props.open ? "flex" : "none")}
   position: fixed; 
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
