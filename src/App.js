@@ -86,8 +86,13 @@ class App extends React.Component {
           {movies ? (
             movies.map(movie => (
               <Col key={movie.id} sm={6} md={4} lg={3}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie}
+                           onClick={() => this.setState({ movie: movie })}
+
+                />
+
               </Col>
+
             ))
           ) : (
             <Spinner src={spinner} alt="spinner" />
