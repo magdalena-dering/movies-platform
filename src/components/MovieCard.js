@@ -56,6 +56,7 @@ const CardTitle = styled.h4`
   font-size: 16px;
   font-weight: 500;
   margin: 0.2em;
+  width: 12em;
 `;
 
 const Rating = styled.p`
