@@ -1,9 +1,17 @@
 # Movies platform - web application based on React and THE MOVIE DB API
 
-Preview: https://gallant-chandrasekhar-cc1896.netlify.com/
+Preview: https://www.movies-platform.pl
 
 General features:
 - getting photos of movie's posters with overview, title, release date and users votes
+
+## What I use:
+
+- React.js, Redux
+- Styled Components
+- React Grid System
+- Responsive design
+- Prettier code styling
 
 ## Setup
 To run this project, install it locally using npm:
